@@ -1,0 +1,73 @@
+body {
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 80px;
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  background-size: cover;
+}
+h1 {
+  color: rgb(0, 30, 108);
+}
+h2 {
+  font-size: 20px;
+  opacity: 0.6;
+}
+footer {
+  color: rgb(100, 111, 212);
+}
+
+.weatherImage {
+  font-size: 80px;
+}
+.cardStyle {
+  text-align: center;
+  padding-top: 40px;
+}
+.day {
+  font-size: 25px;
+  color: rgb(3, 83, 151);
+}
+.degreesCard {
+  font-size: 20px;
+  color: rgb(3, 83, 151);
+}
+.weatherIcon {
+  color: rgb(255, 218, 175);
+}
+.sun {
+  font-size: 120px;
+  color: rgb(247, 215, 22);
+}
+.currentDegrees {
+  font-size: 45px;
+  color: rgb(0, 30, 108);
+}
+.possibleDegrees {
+  font-size: 17px;
+  line-height: 10px;
+  color: rgb(31, 70, 144);
+}
+.weatherDescription {
+  font-size: 30px;
+  color: rgb(41, 52, 98);
+}
+.extraConditionsRight {
+  position: fixed;
+  top: 180px;
+  right: 450px;
+  color: rgb(41, 52, 98);
+}
+#p0 {
+  text-indent: 40%;
+  line-height: 55px;
+}
+.extraConditionsLeft {
+  position: fixed;
+  top: 180px;
+  left: 450px;
+  color: rgb(41, 52, 98);
+}
+#p1 {
+  text-indent: -40%;
+  line-height: 55px;
+}

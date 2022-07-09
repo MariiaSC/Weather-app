@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/75630cfd87.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>Weathirla - Weather Forecast</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="search-form">
+      <div class="input-group rounded w-50">
+        <input
+          type="search"
+          class="form-control rounded"
+          placeholder="Type a city"
+          aria-label="Search"
+          aria-describedby="search-addon"
+          id="search-input-text"
+        />
+        
+        <div class="col-auto">
+          <input type="submit" value= "Search" class="btn btn-primary mb-2"/>
+        </div>
+      </div>
+      </form>
+      <h1 id="city">Kyiv</h1>
+      <h2>Sunday | 12 June | 13:22</h2>
+
+      <i class="fa-solid fa-sun sun"></i>
+      <div class="currentDegrees" ><span id = "temperature">26</span><span class="units"><a href = "#" id = "celcius-link">℃</a> | <a href = "#" id = "fahrenheit-link">℉</a></span> </div>
+      <div class="possibleDegrees"> 
+        ↓19° &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp↑31°"
+      </div>
+      <div class="weatherDescription">Sunny</div>
+      <div class="extraConditionsRight">
+        <p>Precipitation: 9%</p>
+
+        <p id="p0">Humidity:57%</p>
+
+        Wind: 16km/h
+      </div>
+      <div class="extraConditionsLeft">
+        <p>Feels like: 25°</p>
+
+        <p id="p1">UV Index: 7 High</p>
+        Visibility: 16km
+      </div>
+
+      
+        <div class="card-group cardStyle">
+          <div class="card border-primary">
+            <div class="card-body cardStyle">
+              <h5 class="card-title day">Monday</h5>
+
+              <p class="card-text weatherImage">
+                <i class="fa-solid fa-sun weatherIcon"></i>
+              </p>
+              <p class="card-text degreesCard">18°| 28°</p>
+            </div>
+          </div>
+          <div class="card border-primary">
+            <div class="card-body cardStyle">
+              <h5 class="card-title day">Tuesday</h5>
+
+              <p class="card-text weatherImage">
+                <i class="fa-solid fa-cloud-rain weatherIcon"></i>
+              </p>
+              <p class="card-text degreesCard">16°| 23°</p>
+            </div>
+          </div>
+          <div class="card border-primary">
+            <div class="card-body cardStyle">
+              <h5 class="card-title day">Wednesday</h5>
+
+              <p class="card-text weatherImage">
+                <i class="fa-solid fa-cloud-sun weatherIcon"></i>
+              </p>
+              <p class="card-text degreesCard">15°| 22°</p>
+            </div>
+          </div>
+          <div class="card border-primary">
+            <div class="card-body cardStyle">
+              <h5 class="card-title day">Thursday</h5>
+
+              <p class="card-text weatherImage">
+                <i class="fa-solid fa-cloud-sun weatherIcon"></i>
+              </p>
+              <p class="card-text degreesCard">12°| 23°</p>
+            </div>
+          </div>
+          <div class="card border-primary">
+            <div class="card-body cardStyle">
+              <h5 class="card-title day">Friday</h5>
+
+              <p class="card-text weatherImage">
+                <i class="fa-solid fa-cloud-rain weatherIcon"></i>
+              </p>
+              <p class="card-text degreesCard">13°| 25°</p>
+            </div>
+          </div>
+          <div class="card border-primary">
+            <div class="card-body cardStyle">
+              <h5 class="card-title day">Saturday</h5>
+
+              <p class="card-text weatherImage">
+                <i class="fa-solid fa-cloud-sun weatherIcon"></i>
+              </p>
+              <p class="card-text degreesCard">14°| 25°</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <footer><em>Designed by Mariia Sanchez </em></footer>
+      <script type="text/javascript"  src = "src/script.js">
+      </script>
+    </div>
+  </body>
+</html>
