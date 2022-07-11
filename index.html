@@ -10,7 +10,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script
       src="https://kit.fontawesome.com/75630cfd87.js"
       crossorigin="anonymous"
@@ -21,45 +21,50 @@
   <body>
     <div class="container">
       <form id="search-form">
-      <div class="input-group rounded w-50">
-        <input
-          type="search"
-          class="form-control rounded"
-          placeholder="Type a city"
-          aria-label="Search"
-          aria-describedby="search-addon"
-          id="search-input-text"
-        />
-        
-        <div class="col-auto">
-          <input type="submit" value= "Search" class="btn btn-primary mb-2"/>
+        <div class="input-group rounded w-50">
+          <input
+            type="search"
+            class="form-control rounded"
+            placeholder="Type a city"
+            aria-label="Search"
+            aria-describedby="search-addon"
+            id="search-input-text"
+          />
+
+          <div class="col-auto">
+            <input type="submit" value="Search" class="btn btn-primary mb-2" />
+          </div>
         </div>
-      </div>
       </form>
       <h1 id="city">Kyiv</h1>
       <h2>Sunday | 12 June | 13:22</h2>
 
       <i class="fa-solid fa-sun sun"></i>
-      <div class="currentDegrees" ><span id = "temperature">26</span><span class="units"><a href = "#" id = "celcius-link">℃</a> | <a href = "#" id = "fahrenheit-link">℉</a></span> </div>
-      <div class="possibleDegrees"> 
+      <div class="currentDegrees">
+        <span id="temperature">26</span
+        ><span class="units"
+          ><a href="#" id="celcius-link">℃</a> |
+          <a href="#" id="fahrenheit-link">℉</a></span
+        >
+      </div>
+      <div class="possibleDegrees">
         ↓19° &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp↑31°"
       </div>
-      <div class="weatherDescription">Sunny</div>
+      <div class="weatherDescription" id="description">Sunny</div>
       <div class="extraConditionsRight">
         <p>Precipitation: 9%</p>
 
-        <p id="p0">Humidity:57%</p>
+        <p id="p0">Humidity:<span id="humidity">57</span>%</p>
 
-        Wind: 16km/h
-      </div>
-      <div class="extraConditionsLeft">
-        <p>Feels like: 25°</p>
+        Wind: <span id="wind">16</span>km/hr
+        </div>
+        <div class="extraConditionsLeft">
+          <p>Feels like: 25°</p>
 
-        <p id="p1">UV Index: 7 High</p>
-        Visibility: 16km
-      </div>
+          <p id="p1">UV Index: 7 High</p>
+          Visibility: 16km
+        </div>
 
-      
         <div class="card-group cardStyle">
           <div class="card border-primary">
             <div class="card-body cardStyle">
@@ -123,10 +128,13 @@
           </div>
         </div>
       </div>
-      <br>
-      <footer><a href="https://github.com/MariiaSC/Weather-app" target="_blank">Open-source code</a> ", by Mariia Sanchez"</footer>
-      <script type="text/javascript"  src = "src/script.js">
-      </script>
+      <br />
+      <footer>
+        <a href="https://github.com/MariiaSC/Weather-app" target="_blank"
+          >Open-source code</a
+        >, by Mariia Sanchez
+      </footer>
+      <script type="text/javascript" src="src/script.js"></script>
     </div>
   </body>
 </html>
