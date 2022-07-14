@@ -36,10 +36,10 @@
           </div>
         </div>
       </form>
-      <h1 id="city">Kyiv</h1>
-      <h2>Sunday | 12 June | 13:22</h2>
+      <h1 id="city"></h1>
+      <h2></h2>
 
-      <i class="fa-solid fa-sun sun"></i>
+     <i class="fa-solid fa-sun sun"></i>
       <div class="currentDegrees">
         <span id="temperature">26</span
         ><span class="units"
@@ -48,21 +48,21 @@
         >
       </div>
       <div class="possibleDegrees">
-        ↓19° &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp↑31°"
+        ↓<span id="temp-min"></span>>° &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp↑<span id="temp-max"></span>°"
       </div>
-      <div class="weatherDescription" id="description">Sunny</div>
+      <div class="weatherDescription" id="description"></div>
       <div class="extraConditionsRight">
-        <p>Precipitation: 9%</p>
+        <p>Pressure: <span id="pressure"></span></p>
 
-        <p id="p0">Humidity:<span id="humidity">57</span>%</p>
+        <p id="p0">Humidity:<span id="humidity"></span>%</p>
 
-        Wind: <span id="wind">16</span>km/hr
+        Wind: <span id="wind"></span>km/hr
         </div>
         <div class="extraConditionsLeft">
           <p>Feels like: 25°</p>
 
           <p id="p1">UV Index: 7 High</p>
-          Visibility: 16km
+         Visibility:  <span id="visibility"></span>km
         </div>
 
         <div class="card-group cardStyle">
