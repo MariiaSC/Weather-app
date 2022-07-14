@@ -42,22 +42,36 @@ function displayWeather(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector("#temp-min").innerHTML = Math.round(
+    response.data.main.temp_min
+  );
+  document.querySelector("#temp-max").innerHTML = Math.round(
+    response.data.main.temp_max
+  );
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#pressure").innerHTML = Math.round(
+    response.data.main.pressure
+  );
   document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
 }
-function search(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#search-input-text");
-  let h1 = document.querySelector("#city");
-  h1.innerHTML = cityInput.value;
+
+function search(_city) {
   let units = "metric";
   let apiKey = `13685caebdbff39ce18670d2df50386a`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeather);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#search-input-text");
+  let h1 = document.querySelector("#city");
+  h1.innerHTML = cityInput.value;
+  search(_city);
 }
 
 function convertToFahrenheit(event) {
@@ -71,19 +85,17 @@ function convertToCelcius(event) {
   degreesElement.innerHTML = 25;
 }
 
-//Feature 1
 let now = new Date();
 let h2 = document.querySelector("h2");
 h2.innerHTML = currentTime(now);
 
-//Feature 2
 let formSearch = document.querySelector("#search-form");
-formSearch.addEventListener("submit", search);
-
-//Feature 3
+formSearch.addEventListener("submit", handleSubmit);
 
 let fahrehheitLink = document.querySelector("#fahrenheit-link");
 fahrehheitLink.addEventListener("click", convertToFahrenheit);
 
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", convertToCelcius);
+
+search("Kyiv");
