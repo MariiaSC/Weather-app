@@ -20,8 +20,14 @@
   </head>
   <body>
     <div class="container">
+    <div class="row">
+      <div>
+    <button type="button" class="btn btn-outline-info" id="current-location-button">Current location 📍 </button>
+    </div>
+<div class="col-4">
+
       <form id="search-form">
-        <div class="input-group rounded w-50">
+        <div class="input-group rounded w-100">
           <input
             type="search"
             class="form-control rounded"
@@ -29,13 +35,15 @@
             aria-label="Search"
             aria-describedby="search-addon"
             id="search-input-text"
-          />
-
+       />
           <div class="col-auto">
+           </div>
             <input type="submit" value="Search" class="btn btn-primary mb-2" />
           </div>
         </div>
       </form>
+
+    </div>
       <h1 id="city"></h1>
       <h2></h2>
 
@@ -48,7 +56,7 @@
         >
       </div>
       <div class="possibleDegrees">
-        ↓<span id="temp-min"></span>>° &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp↑<span id="temp-max"></span>°"
+        ↓<span id="temp-min"></span>° &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp↑<span id="temp-max"></span>°
       </div>
       <div class="weatherDescription" id="description"></div>
       <div class="extraConditionsRight">

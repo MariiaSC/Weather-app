@@ -59,10 +59,10 @@ function displayWeather(response) {
     response.data.weather[0].description;
 }
 
-function search(_city) {
+function searchCity(city) {
   let units = "metric";
   let apiKey = `13685caebdbff39ce18670d2df50386a`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeather);
 }
 
@@ -71,7 +71,19 @@ function handleSubmit(event) {
   let cityInput = document.querySelector("#search-input-text");
   let h1 = document.querySelector("#city");
   h1.innerHTML = cityInput.value;
-  search(_city);
+  searchCity(cityInput.value);
+}
+
+function searchLocation(position) {
+  let units = "metric";
+  let apiKey = `13685caebdbff39ce18670d2df50386a`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayWeather);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
 function convertToFahrenheit(event) {
@@ -98,4 +110,7 @@ fahrehheitLink.addEventListener("click", convertToFahrenheit);
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", convertToCelcius);
 
-search("Kyiv");
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
+searchCity("Kyiv");
