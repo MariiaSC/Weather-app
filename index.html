@@ -20,57 +20,67 @@
   </head>
   <body>
     <div class="container">
-    <div class="row">
-      <div>
-    <button type="button" class="btn btn-outline-info" id="current-location-button">Current location 📍 </button>
-    </div>
-<div class="col-4">
-
-      <form id="search-form">
-        <div class="input-group rounded w-100">
-          <input
-            type="search"
-            class="form-control rounded"
-            placeholder="Type a city"
-            aria-label="Search"
-            aria-describedby="search-addon"
-            id="search-input-text"
-       />
-          <div class="col-auto">
-           </div>
-            <input type="submit" value="Search" class="btn btn-primary mb-2" />
-          </div>
+      <div class="row">
+        <div>
+          <button
+            type="button"
+            class="btn btn-outline-info"
+            id="current-location-button"
+          >
+            Current location 📍
+          </button>
         </div>
-      </form>
+        <div class="col-4">
+          <form id="search-form">
+            <div class="input-group rounded w-100">
+              <input
+                type="search"
+                class="form-control rounded"
+                placeholder="Type a city"
+                aria-label="Search"
+                aria-describedby="search-addon"
+                id="search-input-text"
+              />
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary mb-2"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
 
-    </div>
-      <h1 id="city"></h1>
-      <h2></h2>
+        <h1 id="city"></h1>
+        <h2></h2>
 
-     <i class="fa-solid fa-sun sun"></i>
-      <div class="currentDegrees">
-        <span id="temperature">26</span
-        ><span class="units"
-          ><a href="#" id="celcius-link">℃</a> |
-          <a href="#" id="fahrenheit-link">℉</a></span
-        >
-      </div>
-      <div class="possibleDegrees">
-        ↓<span id="temp-min"></span>° &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp↑<span id="temp-max"></span>°
-      </div>
-      <div class="weatherDescription" id="description"></div>
-      <div class="extraConditionsRight">
-        <p>Pressure: <span id="pressure"></span></p>
+        <i class="fa-solid fa-sun sun"></i>
+        <div class="currentDegrees">
+          <span id="temperature">26</span
+          ><span class="units"
+            ><a href="#" id="celcius-link">℃</a> |
+            <a href="#" id="fahrenheit-link">℉</a></span
+          >
+        </div>
+        <div class="possibleDegrees">
+          ↓<span id="temp-min"></span>° &nbsp&nbsp&nbsp&nbsp↑<span
+            id="temp-max"
+          ></span
+          >°
+        </div>
+        <div class="weatherDescription" id="description"></div>
+        <div class="extraConditionsRight">
+          <p>Pressure: <span id="pressure"></span> hPa</p>
 
-        <p id="p0">Humidity:<span id="humidity"></span>%</p>
+          <p id="p0">Humidity:<span id="humidity"></span>%</p>
 
-        Wind: <span id="wind"></span>km/hr
+          Wind: <span id="wind"></span> km/hr
         </div>
         <div class="extraConditionsLeft">
           <p>Feels like: 25°</p>
 
           <p id="p1">UV Index: 7 High</p>
-         Visibility:  <span id="visibility"></span>km
+          Visibility: <span id="visibility"></span>km
         </div>
 
         <div class="card-group cardStyle">
