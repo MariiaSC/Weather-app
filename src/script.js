@@ -1,5 +1,5 @@
-function currentTime(now) {
-  let date = now.getDate();
+function currentTime(timestamp) {
+  let now = new Date(timestamp);
   let hours = now.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -33,8 +33,8 @@ function currentTime(now) {
     "Dec",
   ];
   let month = months[now.getMonth()];
-
-  return `${day} | ${date} ${month} | ${hours}:${minutes}`;
+  let date = now.getDate();
+  return `${day} | ${date}  ${month} | ${hours}:${minutes}`;
 }
 function displayWeather(response) {
   console.log(response.data);
@@ -48,6 +48,9 @@ function displayWeather(response) {
   document.querySelector("#temp-max").innerHTML = Math.round(
     response.data.main.temp_max
   );
+  document.querySelector("#feelsLike").innerHTML = Math.round(
+    response.data.main.feels_like
+  );
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -57,6 +60,19 @@ function displayWeather(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+  document.querySelector("#date").innerHTML = currentTime(
+    response.data.dt * 1000
+  );
+
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#icon")
+    .setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(city) {

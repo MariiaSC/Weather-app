@@ -15,7 +15,6 @@ h2 {
 footer {
   color: rgb(100, 111, 212);
 }
-
 .weatherImage {
   font-size: 80px;
 }
@@ -46,11 +45,11 @@ footer {
 }
 .possibleDegrees {
   font-size: 17px;
-
   line-height: 10px;
   color: rgb(31, 70, 144);
 }
 .weatherDescription {
+  text-transform: capitalize;
   font-size: 30px;
   color: rgb(41, 52, 98);
 }
