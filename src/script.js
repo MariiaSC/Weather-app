@@ -60,6 +60,8 @@ function displayWeather(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+  document.querySelector("#visibility").innerHTML =
+    response.data.visibility / 1000;
   document.querySelector("#date").innerHTML = currentTime(
     response.data.dt * 1000
   );
