@@ -81,3 +81,10 @@ footer {
 #temperature {
   font-size: 100x;
 }
+.currentDegrees .active {
+  color: rgb(0, 30, 108);
+  cursor: default;
+}
+.currentDegrees .active:hover {
+  text-decoration: none;
+}
