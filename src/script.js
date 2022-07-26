@@ -120,6 +120,33 @@ function convertToCelcius(event) {
   let degreesElement = document.querySelector("#temperature");
   degreesElement.innerHTML = Math.round(celciusTemperature);
 }
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Mon", "Tue", "Wedn", "Thur", "Fri", "Sat", "Sun"];
+  let forecastHTML = `<div class="card-group cardStyle row no-gutters" id="forecast" >`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="">
+       <div class="col">
+      <div class="card border-primary">
+            <div class="card-body cardStyle">
+              <h5 class="card-title day">${day}</h5>
+
+              <p class="card-text weatherImage">
+                <i class="fa-solid fa-sun weatherIcon"></i>
+              </p>
+              <p class="card-text degreesCard">18°| 28°</p>
+            </div>
+               </div>
+          </div>
+          </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let celciusTemperature = null;
 let now = new Date();
 let h2 = document.querySelector("h2");
@@ -138,3 +165,4 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Kyiv");
+displayForecast();

@@ -47,6 +47,7 @@ footer {
   font-size: 17px;
   line-height: 10px;
   color: rgb(31, 70, 144);
+  opacity: 0.7;
 }
 .weatherDescription {
   text-transform: capitalize;
@@ -87,4 +88,7 @@ footer {
 }
 .currentDegrees .active:hover {
   text-decoration: none;
+}
+#forecast {
+  column-width: 200;
 }
