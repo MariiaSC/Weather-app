@@ -36,6 +36,54 @@ function currentTime(timestamp) {
   let date = now.getDate();
   return `${day} | ${date}  ${month} | ${hours}:${minutes}`;
 }
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row" id="forecast" >`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+       <div class="col">
+      <div class="card border-primary">
+            <div class="card-body cardStyle">
+              <h5 class="card-title day">${formatDay(forecastDay.dt)}</h5>
+              <img
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          alt=""
+          width="42"
+        />
+              <p class="card-text degreesCard">${Math.round(
+                forecastDay.temp.min
+              )}°| ${Math.round(forecastDay.temp.max)}°</p>
+            </div>
+          </div>
+          </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = `13685caebdbff39ce18670d2df50386a`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeather(response) {
   console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
@@ -75,6 +123,8 @@ function displayWeather(response) {
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -121,32 +171,6 @@ function convertToCelcius(event) {
   degreesElement.innerHTML = Math.round(celciusTemperature);
 }
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-  let days = ["Mon", "Tue", "Wedn", "Thur", "Fri", "Sat", "Sun"];
-  let forecastHTML = `<div class="card-group cardStyle row no-gutters" id="forecast" >`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="">
-       <div class="col">
-      <div class="card border-primary">
-            <div class="card-body cardStyle">
-              <h5 class="card-title day">${day}</h5>
-
-              <p class="card-text weatherImage">
-                <i class="fa-solid fa-sun weatherIcon"></i>
-              </p>
-              <p class="card-text degreesCard">18°| 28°</p>
-            </div>
-               </div>
-          </div>
-          </div>`;
-  });
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-}
-
 let celciusTemperature = null;
 let now = new Date();
 let h2 = document.querySelector("h2");
@@ -165,4 +189,3 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Kyiv");
-displayForecast();
