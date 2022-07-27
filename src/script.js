@@ -56,8 +56,6 @@ function displayForecast(response) {
         forecastHTML +
         `
        <div class="col">
-      <div class="card border-primary">
-            <div class="card-body cardStyle">
               <h5 class="card-title day">${formatDay(forecastDay.dt)}</h5>
               <img
           src="http://openweathermap.org/img/wn/${
@@ -66,11 +64,12 @@ function displayForecast(response) {
           alt=""
           width="42"
         />
+         <div class="weather-forecast-temperatures">
               <p class="card-text degreesCard">${Math.round(
                 forecastDay.temp.min
               )}°| ${Math.round(forecastDay.temp.max)}°</p>
-            </div>
-          </div>
+              </div>
+              </div>
           </div>`;
     }
   });

@@ -2,8 +2,6 @@ body {
   text-align: center;
   margin-top: 35px;
   margin-bottom: 80px;
-  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-  background-size: cover;
 }
 h1 {
   color: rgb(0, 30, 108);
@@ -14,6 +12,16 @@ h2 {
 }
 footer {
   color: rgb(100, 111, 212);
+}
+.weather-app-wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+.weather-app {
+  padding: 20px;
+  border: 1px solid #083460;
+  border-radius: 5px;
 }
 .weatherImage {
   font-size: 80px;
@@ -27,7 +35,6 @@ footer {
   color: rgb(3, 83, 151);
 }
 .degreesCard {
-  font-size: 20px;
   color: rgb(3, 83, 151);
 }
 .weatherIcon {
@@ -74,6 +81,9 @@ footer {
   top: 180px;
   left: 450px;
   color: rgb(41, 52, 98);
+}
+.weather-forecast-temperatures {
+  font-size: 17px;
 }
 #p1 {
   text-indent: -40%;

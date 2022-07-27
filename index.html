@@ -20,17 +20,11 @@
   </head>
   <body>
     <div class="container">
+       <div class="weather-app-wrapper">
+          <div class="weather-app">
       <div class="row">
-        <div>
-          <button
-            type="button"
-            class="btn btn-outline-info"
-            id="current-location-button"
-          >
-            Current location 📍
-          </button>
-        </div>
-        <div class="col-4">
+        
+        <div class="col-6">
           <form id="search-form">
             <div class="input-group rounded w-100">
               <input
@@ -40,6 +34,7 @@
                 aria-label="Search"
                 aria-describedby="search-addon"
                 id="search-input-text"
+                autocomplete="off"
               />
                 <input
                   type="submit"
@@ -48,6 +43,16 @@
                 />
               </div>
             </div>
+            <div>
+          <button
+            type="button"
+            class="btn btn-outline-info w-90 "
+            id="current-location-button"
+          
+          >
+            Current location 📍
+          </button>
+        </div>
           </form>
         </div>
 
@@ -85,13 +90,15 @@
 
         <div class="card-group cardStyle" id="forecast"></div>
       </div>
-      <br />
+       </div>
       <footer>
         <a href="https://github.com/MariiaSC/Weather-app" target="_blank"
           >Open-source code</a
         >, by Mariia Sanchez
       </footer>
       <script type="text/javascript" src="src/script.js"></script>
+  
+    </div>
     </div>
   </body>
 </html>
